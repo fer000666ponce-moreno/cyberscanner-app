@@ -1,42 +1,48 @@
 import { useState } from "react";
-import { Device } from "@capacitor/device";
-import { Network } from "@capacitor/network";
 
 export default function App() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({
+    dispositivo: "Cargando...",
+    sistema: "Cargando...",
+    conectado: false,
+    tipoConexion: "desconocido",
+    ipPublica: "Cargando..."
+  });
 
-  const scan = async () => {
-    const device = await Device.getInfo();
-    const network = await Network.getStatus();
-
-    let ipPublica = "no disponible";
-
-    try {
-      const res = await fetch("https://api.ipify.org?format=json");
-      const json = await res.json();
-      ipPublica = json.ip;
-    } catch (e) {}
-
+  const scan = () => {
+    // Simulación de datos (puedes reemplazar con lógica real después)
     setData({
-      dispositivo: device.model,
-      sistema: device.operatingSystem,
-      plataforma: device.platform,
-      conectado: network.connected,
-      tipoConexion: network.connectionType,
-      ipPublica
+      dispositivo: "Android",
+      sistema: "web/apk",
+      conectado: true,
+      tipoConexion: "wifi",
+      ipPublica: "187.234.xxx.xxx"
     });
   };
 
   return (
-    <div style={{
-      background: "#000",
-      color: "#0f0",
-      padding: 20,
-      fontFamily: "monospace"
-    }}>
+    <div
+      style={{
+        background: "#000",
+        color: "#0f0",
+        padding: 20,
+        fontFamily: "monospace",
+        minHeight: "100vh"
+      }}
+    >
       <h2>CYBER SCANNER</h2>
 
-      <button onClick={scan} style={{ padding: 10 }}>
+      <button
+        onClick={scan}
+        style={{
+          padding: "10px 20px",
+          background: "#0f0",
+          color: "#000",
+          border: "none",
+          cursor: "pointer",
+          fontWeight: "bold"
+        }}
+      >
         ESCANEAR RED
       </button>
 
