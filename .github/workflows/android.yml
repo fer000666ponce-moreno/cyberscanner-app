@@ -16,8 +16,11 @@ jobs:
       with:
         node-version: 20
 
-    - run: npm install
-    - run: npm run build
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build web app
+      run: npm run build
 
     - name: Setup Java
       uses: actions/setup-java@v4
@@ -25,11 +28,15 @@ jobs:
         distribution: temurin
         java-version: 17
 
-    - name: Build Android
+    - name: Install Capacitor Android
       run: |
         npm install @capacitor/android
-        npx cap add android || true
+        npx cap init cyberscanner com.cyberscanner.app
+        npx cap add android
         npx cap sync android
+
+    - name: Build APK
+      run: |
         cd android
         chmod +x gradlew
         ./gradlew assembleDebug
