@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">cyberscanner</string>
+    <string name="title_activity_main">cyberscanner</string>
+    <string name="package_name">com.cyberscanner.pro</string>
+    <string name="custom_url_scheme">com.cyberscanner.pro</string>
+</resources>
