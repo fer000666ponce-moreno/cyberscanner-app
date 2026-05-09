@@ -2,7 +2,8 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ main 
+    branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,7 +32,7 @@ jobs:
       - name: Install Capacitor
         run: npm install @capacitor/cli @capacitor/android
 
-      - name: Sync Capacitor Android
+      - name: Sync Capacitor
         run: npx cap sync android
 
       - name: Build APK
