@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build APK
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build web app
+    - name: Build web
       run: npm run build
 
     - name: Setup Java
@@ -28,10 +28,10 @@ jobs:
         distribution: temurin
         java-version: 17
 
-    - name: Install Capacitor Android
+    - name: Setup Capacitor Android
       run: |
-        npm install @capacitor/android
-        npx cap init cyberscanner com.cyberscanner.app
+        npm install @capacitor/core @capacitor/cli @capacitor/android
+        npx cap init cyberscanner com.cyberscanner.app --web-dir=dist
         npx cap add android
         npx cap sync android
 
