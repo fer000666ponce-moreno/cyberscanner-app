@@ -26,7 +26,10 @@ jobs:
           distribution: temurin
           java-version: 21
 
-     - name: Build Web
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Web
         run: npm run build
 
       - name: Sync Capacitor
