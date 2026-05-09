@@ -13,6 +13,10 @@
     "@capacitor/android": "^8.3.3",
     "@capacitor/cli": "^8.3.3",
     "@capacitor/core": "^8.3.3",
+    "@capacitor/device": "^8.0.2",
+    "@capacitor/network": "^8.0.1",
+    "ipify": "^7.0.0",
+    "ping": "^1.0.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
