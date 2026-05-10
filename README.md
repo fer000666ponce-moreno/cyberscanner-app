@@ -17,3 +17,4 @@ If you are developing a production application, we recommend using TypeScript wi
 # rebuild
 // rebuild trigger
 // trigger build
+// trigger build
