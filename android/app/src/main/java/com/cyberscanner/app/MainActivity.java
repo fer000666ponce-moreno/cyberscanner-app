@@ -2,8 +2,6 @@ package com.cyberscanner.app;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class MainActivity extends Activity {
@@ -15,14 +13,12 @@ public class MainActivity extends Activity {
         WebView webView = new WebView(this);
         setContentView(webView);
 
-        WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        settings.setDomStorageEnabled(true);
-        settings.setAllowFileAccess(true);
-        settings.setAllowContentAccess(true);
+        webView.getSettings().setJavaScriptEnabled(true);
 
-        webView.setWebChromeClient(new WebChromeClient());
-
-        webView.loadUrl("file:///android_asset/public/index.html");
+        webView.loadData(
+            "<html><body style='background:black;color:lime;display:flex;justify-content:center;align-items:center;height:100vh;font-size:30px;'>CYBERSCANNER OK</body></html>",
+            "text/html",
+            "UTF-8"
+        );
     }
 }
