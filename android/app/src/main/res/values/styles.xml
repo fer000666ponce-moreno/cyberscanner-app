@@ -1,16 +1,10 @@
 <resources>
 
+    <!-- Tema principal simple compatible -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryVariant">#000000</item>
-        <item name="colorOnPrimary">#00ff00</item>
         <item name="colorSecondary">#00ff00</item>
-    </style>
-
-    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">#000000</item>
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
-        <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
 </resources>
