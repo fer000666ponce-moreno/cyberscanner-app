@@ -1,0 +1,6 @@
+{
+  "appId": "com.cyberscanner.app",
+  "appName": "Cyberscanner",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
